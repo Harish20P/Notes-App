@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Notes App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Notes</h1>
+            <div class="header-controls">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="notes-container">
+                <div class="notes-sidebar">
+                    <button id="newNoteBtn" class="new-note-btn">
+                        <i class="fas fa-plus"></i> New Note
+                    </button>
+                    <div id="notesList" class="notes-list">
+                        <!-- Notes will be populated here -->
+                    </div>
+                </div>
+
+                <div class="note-editor">
+                    <div class="editor-header">
+                        <input type="text" id="noteTitle" placeholder="Note Title" class="note-title-input">
+                        <div class="editor-controls">
+                            <button id="saveNote" class="save-btn">
+                                <i class="fas fa-save"></i> Save
+                            </button>
+                            <button id="deleteNote" class="delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                    <div class="editor-toolbar">
+                        <button class="toolbar-btn" data-format="list"><i class="fas fa-list"></i></button>
+                        <button class="toolbar-btn" data-format="code"><i class="fas fa-code"></i></button>
+                    </div>
+                    <textarea id="noteContent" class="note-content" placeholder="Start writing your note..."></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

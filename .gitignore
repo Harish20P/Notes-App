@@ -1,0 +1,23 @@
+# Ignore the virtual environment
+venv/
+
+# Ignore database files
+instance/*.db
+instance/*.sqlite3
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore VS Code settings (if using VS Code)
+.vscode/
+
+# Ignore dependency files
+pip-log.txt
+pip-delete-this-directory.txt

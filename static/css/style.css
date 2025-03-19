@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #4a90e2;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --sidebar-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+    --hover-color: #f0f0f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --primary-color: #64b5f6;
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --sidebar-bg: #2d2d2d;
+    --border-color: #404040;
+    --hover-color: #3d3d3d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-color);
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    height: calc(100vh - 100px);
+}
+
+.notes-sidebar {
+    background-color: var(--sidebar-bg);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-note-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.new-note-btn:hover {
+    background-color: #357abd;
+}
+
+.notes-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.note-item {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.note-item:hover {
+    background-color: var(--hover-color);
+}
+
+.note-item.active {
+    background-color: var(--hover-color);
+}
+
+.note-editor {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.note-title-input {
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    color: var(--text-color);
+    width: 100%;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.editor-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.save-btn, .delete-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.save-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #357abd;
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+.editor-toolbar {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.toolbar-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toolbar-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.note-content {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: none;
+    padding: 10px;
+}
+
+.note-content:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .notes-sidebar {
+        display: none;
+    }
+} 
